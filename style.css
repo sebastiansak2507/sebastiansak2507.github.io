@@ -1,0 +1,300 @@
+* {  
+    padding: 0;  
+    margin: 0;  
+    box-sizing: border-box;  
+    font-family: 'Arial', sans-serif;  
+}  
+
+body {  
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); /* Fondo tipo espacial */
+    color: #fff;  
+}  
+
+.container {  
+    width: 90%;
+    max-width:1000px;  
+    margin:20px auto; /* Añadir padding lateral */
+}  
+
+.navbar {
+    background-color: rgba(248, 1, 10, 0.9);
+    padding: 10px 20px; /* Añadir padding */
+    color: white;
+    display: flex;
+    flex-direction: row; /* Cambia a columna en la media query */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.navbar nav {
+    display: inline-block;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #FFD700; /* Color dorado al pasar el mouse */
+}
+
+.search-container {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.search-container input {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.search-container button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #FFD700;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #FFC107; /* Color más claro al pasar el mouse */
+}
+
+@media(max-width: 661px) {
+    .navbar {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        align-items: center; /* Centrar los elementos */
+        padding: 10px 0; /* Ajustar el padding */
+    }
+
+    .navbar nav {
+        margin-top: 10px; /* Espacio entre logo y navegación */
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Cambiar a columna */
+        gap: 10px; /* Espacio entre los elementos de la lista */
+    }
+
+    .search-container {
+        margin-top: 10px; /* Espacio entre la barra de búsqueda y los enlaces */
+        width: 100%; /* Hacer que ocupe el ancho completo */
+        text-align: center; /* Centrar el contenido */
+    }
+}
+
+
+.section-title {
+    font-size: 32px; /* Tamaño de letra más grande */
+    font-weight: bold; /* Negrita */
+    text-align: center; /* Centrar título */
+    margin-bottom: 20px;  
+    color: #FFD700; /* Color dorado */
+}  
+
+.movies, .featured {  
+    padding: 50px 0;  
+}  
+
+.advertisements-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    container-type:inline-size;
+}
+
+.ad {
+    width: 45%;
+    text-align: center;
+}
+
+.ad img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.swiper {  
+    width: 100%;  
+}  
+
+.swiper-slide {  
+    background-position: center;  
+    background-size: cover;  
+    width: 250px;  
+    position: relative;  
+}  
+
+.swiper-slide img {  
+    display: block;  
+    width: 100%;  
+    border-radius: 10px;  
+}  
+
+.info {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.swiper-slide:hover .info {
+    opacity: 1; /* Mostrar información al pasar el mouse */
+}
+
+.icons {  
+    padding: 50px 0;  
+    display: flex;  
+    justify-content: space-between;  
+}  
+
+.icons i {  
+    font-size: 25px;  
+    color: #FFD700; /* Color dorado */
+    height: 60px;  
+    width: 60px;  
+    border-radius: 50%;  
+    display: flex;  
+    align-items: center;  
+    justify-content: center;  
+    transition: background-color 0.3s;  
+}  
+
+.icons i:hover {  
+    color: #F8010A;  
+    background-color: rgba(255, 255, 255, 0.2);  
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);  
+    cursor: pointer;  
+}  
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(248, 1, 10, 0.9);
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@media(max-width: 661px) {
+    body {
+        min-height: 100vh;
+    }
+    
+     .navbar {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        align-items: center; /* Centrar los elementos */
+        padding: 10px 0; /* Ajustar el padding */
+    }
+
+    .navbar nav {
+        margin-top: 10px; /* Espacio entre logo y navegación */
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Cambiar a columna */
+        gap: 10px; /* Espacio entre los elementos de la lista */
+    }
+
+    .search-container {
+        margin-top: 10px; /* Espacio entre la barra de búsqueda y los enlaces */
+        width: 100%; /* Hacer que ocupe el ancho completo */
+        text-align: center; /* Centrar el contenido */
+    }
+
+    .movies, .featured, .icons {
+        padding: 30px;
+    }
+
+    .advertisements-container {
+        display: flex;
+        flex-direction: column; /* Apila los elementos en una columna */
+        gap: 10px; /* Espacio entre los elementos */
+        padding: 0px;
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    
+    .ad {
+        width: 100%; /* Ocupa el 100% del ancho del contenedor */
+        padding: 10px; /* Añade espacio interno */
+        box-sizing: border-box;
+        background-color: #f0f0f0; /* Color de fondo para visualización */
+        overflow-wrap: break-word; /* Evita que el texto se desborde */
+    }
+    
+    
+
+    .info {
+        position: absolute;
+        bottom: 0;
+        left: 0; /* Asegura que el texto empiece desde la izquierda */
+        right: 0; /* Asegura que el texto ocupe todo el ancho */
+        background: rgba(0, 0, 0, 0.7);
+        color: white; /* Corregido de "blanco" a "white" */
+        padding: 10px;
+        width: 100%; /* Cambiado a 100% para ocupar todo el ancho */
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+        box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+    }
+    
+    /* Ajustes para pantallas pequeñas */
+    @media (max-width: 568px) {
+        .info {
+            padding: 5px; /* Reducir el padding en pantallas pequeñas */
+            font-size: 14px; /* Reducir el tamaño de la fuente */
+        }
+    
+        .info h3 {
+            font-size: 16px; /* Ajustar el tamaño del título */
+        }
+    
+        .info p {
+            font-size: 12px; /* Ajustar el tamaño del texto */
+        }
+    }
+    
+    /* Ajustes para pantallas muy pequeñas */
+    @media (max-width: 480px) {
+        .info {
+            padding: 1px; /* Reducir aún más el padding */
+            font-size: 10px; /* Reducir el tamaño de la fuente */
+        }
+    
+        .info h3 {
+            font-size: 10px; /* Ajustar el tamaño del título */
+        }
+    
+        .info p {
+            font-size: 7px; /* Ajustar el tamaño del texto */
+        }
+    }
+    
+}
